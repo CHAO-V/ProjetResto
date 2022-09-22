@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --spacing: 0.25rem;
+  --transition: all 0.3s linear;
+  --radius: 0.5rem;
+  --opacity: 0.5;
+  --clr-white: #fff;
+  --clr-black: #000;
+  --title-center: center;
+  --max-width: 1170px;
+}
+
+body {
+  /* background-color: var(--clr-black); */
+  background-color: #333;
+}
+
+h1 {
+  margin-top: 1rem;
+  letter-spacing: var(--spacing);
+  text-align: center;
+  color: var(--clr-white);
+}
+
+.navbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.nav-list {
+  box-shadow: 0px 0px 10px var(--clr-gray200);
+  padding: 1rem 0;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  margin-right: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--clr-white);
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  opacity: var(--opacity);
+  text-decoration: underline;
+}
+
+.nav-links:first-child {
+  margin-right: auto;
+  margin-left: 2rem;
+}
+
+.logo {
+  width: 150px;
+  border: 7px double grey;
+  border-radius: 1rem;
+  animation: 1s linear 2s infinite running glowingLogo;
+}
+
+@keyframes glowingLogo {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.48);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.48);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.BtnContainer {
+  text-align: center;
+}
+
+/* Style de chaque groupe de champs (fieldset) */
+fieldset {
+  margin: 1.5rem 0;
+  padding: 1em;
+  font-size: 1rem;
+  border-radius: 0.5em;
+}
+
+legend {
+  padding: 0 1rem;
+  font-size: 1.3rem;
+  color: var(--clr-white);
+}
+
+/* Style de chaque champ (field) */
+.field {
+  display: flex;
+  padding: 1em 0;
+}
+
+.field label {
+  width: 30%;
+}
+
+.field .value {
+  width: 70%;
+}
+
+.field input {
+  width: 100%;
+}
+
+.field + .field {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Style de chaque libélé */
+label {
+  padding: 0.5em;
+  color: var(--clr-white);
+}
+
+/* Style de chaque input */
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="email"],
+input[type*="date"],
+textarea {
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+}
+
+textarea {
+  width: 100%;
+}
+textarea {
+  display: block;
+  resize: none;
+  min-height: 10em;
+}
+
+/* Style de chaque bouton */
+.button {
+  display: inline-block;
+  padding: 1em 2em;
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--clr-black);
+  border: 2px solid var(--clr-white);
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.button:hover {
+  text-decoration: none;
+  color: var(--clr-black);
+  background-color: var(--clr-white);
+}
+
+#errorA {
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+}

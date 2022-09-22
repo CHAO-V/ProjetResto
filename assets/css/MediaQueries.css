@@ -1,0 +1,48 @@
+/*Media queries*/
+@media screen and (max-width: 780px) {
+  .h1-home {
+    font-size: 2rem;
+  }
+  .nav-logo {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .navbar-center {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .nav-links ul {
+    display: block;
+    text-align: center;
+  }
+  .nav-icon {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .footer-flex {
+    display: block;
+  }
+
+  .footer-flex aside {
+    width: 100%;
+  }
+
+  /*menucard*/
+  .menuCard {
+    display: block;
+  }
+
+  .menuImg {
+    text-align: center;
+  }
+  .menuImg img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .menuBtn {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}

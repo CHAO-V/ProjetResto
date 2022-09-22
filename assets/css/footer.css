@@ -1,0 +1,76 @@
+/*Footer*/
+
+footer {
+  background-color: var(--clr-black);
+}
+
+h4 {
+  color: var(--clr-white);
+}
+
+footer aside h4 {
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dotted var(--clr-white);
+  margin-bottom: 1rem;
+}
+
+footer aside li {
+  color: var(--clr-white);
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+footer aside {
+  padding: 2rem;
+  text-align: center;
+}
+
+.reseaux a {
+  color: var(--clr-white);
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: 0.7s color;
+}
+
+.reseaux {
+  margin-top: 1rem;
+}
+
+.footer-flex {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-flex aside {
+  width: calc(100% / 3 - 2rem);
+}
+
+.fa-snapchat:hover {
+  color: yellow;
+}
+.fa-instagram:hover {
+  color: #e1306c;
+}
+.fa-facebook:hover {
+  color: #4267b2;
+}
+
+.btn-footer-container {
+  margin-top: 1rem;
+}
+
+.btn-footer {
+  text-decoration: none;
+  color: var(--clr-white);
+  border: 1px solid var(--clr-white);
+  padding: 0.5rem;
+  transition: var(--transition);
+}
+
+.btn-footer:hover {
+  background: var(--clr-white);
+  color: var(--clr-black);
+}

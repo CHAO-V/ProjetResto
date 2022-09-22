@@ -1,0 +1,21 @@
+.logo {
+  width: 150px;
+  border: 7px double grey;
+  border-radius: 1rem;
+  animation: 1s linear 2s infinite running glowingLogo;
+}
+
+@keyframes glowingLogo {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.48);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.48);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
