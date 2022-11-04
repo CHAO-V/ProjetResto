@@ -155,6 +155,7 @@ p {
 /*Menu Section*/
 .sectionM {
   background-color: var(--clr-black);
+  overflow: auto;
 }
 .container {
   margin: 0 auto;
@@ -226,7 +227,7 @@ figcaption h3 {
   text-decoration: none;
   border: 2px solid var(--clr-white);
   letter-spacing: 0.3rem;
-  margin: 2rem 1rem;
+  margin: 1rem 1rem;
   cursor: pointer;
 }
 .filter button:hover,
@@ -288,6 +289,7 @@ figcaption h3 {
 .menuImg img {
   width: 400px;
   max-height: 300px;
+  object-fit: cover;
 }
 .menuTxt,
 .menuBtn {
@@ -320,7 +322,6 @@ figcaption h3 {
 }
 /*CommandeSection*/
 .commandeSection {
-  border-top: 1px solid white;
   background: var(--clr-black);
 }
 
@@ -369,9 +370,9 @@ span {
   color: var(--clr-black);
 }
 
-.btn-container {
+/* .btn-container {
   text-align: center;
-}
+} */
 
 .btnContainer {
   text-align: center;
@@ -382,3 +383,45 @@ span {
   display: flex;
   justify-content: space-between;
 } */
+
+.reviewsSection {
+  background: var(--clr-black);
+}
+.reviewsCard {
+  padding: 2rem;
+  display: flex;
+  width: 100%;
+  border: 1px solid var(--clr-white);
+  margin-bottom: 1rem;
+}
+.reviewsImg {
+  width: 25%;
+}
+.reviewsTxt {
+  width: 75%;
+  overflow-wrap: break-word;
+}
+
+img {
+  width: 100px;
+  object-fit: cover;
+}
+
+/*Boutton UP*/
+
+.btnUp {
+  height: 50px;
+  width: 50px;
+  background: var(--clr-white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}
+.icone {
+  width: 50px;
+}

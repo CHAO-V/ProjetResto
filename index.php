@@ -34,7 +34,7 @@
           </div>
           <div class="nav-links">
             <ul>
-              <a href="index.php"><li>Home</li></a>
+              <a href="index.php"><li>Accueil</li></a>
               <a href="#menu"><li>Menu</li></a>
               <a href="#commander"><li>Commander</li></a>
               <a href="./contact.php"><li>Contact</li></a>
@@ -133,10 +133,9 @@
       </div>
        
     </section>
-    <hr class="separator">
     <section class='commandeSection' id='commander'>
       <div class='container'>
-      <h1>Commander votre repas</h1>
+      <h1>Commander votre repas</h1>      
     <?php
     if (isset($_SESSION['client']['mail'])){
    echo"
@@ -200,16 +199,32 @@
               </a>
             </div>
             <div class="btn-footer-container">
-            <a
+              <ul>
+                <li>
+                <a
                 href="./contact.php"
                 target="_blank" class='btn-footer'
                 >Nous Contacter
               </a>
+                </li>
+            <li>
+            <a
+                href="./avis.php"
+                target="_blank" class='btn-footer'
+                >Donner votre avis
+              </a>
+            </li>
+              </ul>
+           
               </div>
+              
           </aside>
         </div>
       </div>
     </footer>
+    <div class="btnUp">
+   <img src="./assets/images/arrow-up.png" class="icone">     
+    </div>
     <!-- <script src="./assets/js/price.js"></script> -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -220,5 +235,6 @@
     <script>
       let mixer = mixitup(".mixitup");
     </script>
+    <script src="./assets/js/BtnScroll.js"></script>
   </body>
 </html>

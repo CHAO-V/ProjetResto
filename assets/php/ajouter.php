@@ -35,21 +35,24 @@ if(isset($_POST['AddProduct'])){
       $message ="Veuillez ajouter une image !";
     }
 
-    
 
     if(isset($productName) && !empty($productName) && isset($description) && !empty($description)&& isset($categorie) && !empty($categorie)&& isset($prix) && !empty($prix)){
 
           $fileToUpload = $imageInput;
-          $target_file = __DIR__ . '/assets/imageDataBase/' . basename($fileToUpload["name"]);
+          $target_file = __DIR__ . '/../imageDataBase/' . basename($fileToUpload["name"]);
           // $target_file =  'C:/xampp/htdocs/ProjetResto/assets/imageDataBase/'. basename($fileToUpload["name"]);
           // $target_file = __DIR__ . './../../assets/imageDataBase/'. basename($fileToUpload["name"]);
           $imgPath = 'assets/imageDataBase/' . $fileToUpload["name"];
           $uploadOk = true;
           $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     
-      var_dump($fileToUpload);
-      var_dump($_FILES);
-      var_dump($_POST);
+      // var_dump($target_file);
+      // echo"<br>";
+      // var_dump($fileToUpload);
+      // echo"<br>";
+      // var_dump($_FILES);
+      // echo"<br>";
+      // var_dump($_POST);
 
           // Check if image file is a actual image or fake image
           if (isset($_POST["AddProduct"])) {
@@ -62,7 +65,7 @@ if(isset($_POST['AddProduct'])){
             }
           }
     
-          var_dump($imageInput);
+          // var_dump($imageInput);
           // var_dump($_FILES);
           // Check if file already exists
           if (file_exists($target_file)) {
@@ -71,7 +74,7 @@ if(isset($_POST['AddProduct'])){
           }
     
           // Check file size
-          if ($fileToUpload["size"] > 500000) {
+          if ($fileToUpload["size"] > 5000000) {
             echo "Désolé, le fichier dépasse la taille maximale autorisé";
             $uploadOk = false;
           }
@@ -92,8 +95,8 @@ if(isset($_POST['AddProduct'])){
           } else {
     
             //je déplace mon fichier du dossier temporaire vers son dossier définitif
-            // if (move_uploaded_file($fileToUpload["tmp_name"], $target_file)) {
-            if (move_uploaded_file($fileToUpload["tmp_name"], $imgPath)) {
+            if (move_uploaded_file($fileToUpload["tmp_name"], $target_file)) {
+            // if (move_uploaded_file($fileToUpload["tmp_name"], $imgPath)) {
               //succès
               // echo "The file " . htmlspecialchars(basename($fileToUpload["name"])) . " has been uploaded.";
               // echo '<a href="../../index.php">Lien de retour</a>';
@@ -109,11 +112,7 @@ if(isset($_POST['AddProduct'])){
     }else{
       $message ="Le produit n'a pas pu être ajouté !";
     }
- 
 
 }
 
- 
-   ?>
-
-
+ ?>

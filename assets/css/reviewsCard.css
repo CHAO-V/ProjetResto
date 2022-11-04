@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.reviewsCard {
+  padding: 2rem;
+  display: flex;
+  width: 100%;
+  border: 1px solid var(--clr-white);
+  margin-bottom: 1rem;
+}
+.reviewsImg {
+  width: 25%;
+}
+.reviewsTxt {
+  width: 75%;
+  overflow-wrap: break-word;
+}
+
+img {
+  width: 100px;
+  object-fit: cover;
+}
+
+p {
+  color: white;
+}

@@ -89,6 +89,16 @@ legend {
   margin-top: 2rem;
 }
 
+.panier img {
+  width: 40px;
+  padding: 8px 0;
+}
+.panier section {
+  width: 70%;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+}
 table {
   border-collapse: collapse;
   width: 100%;
@@ -102,7 +112,7 @@ th {
 td {
   border-top: 0.5px solid #999;
   text-align: center;
-  color: #37a6ff;
+  color: var(--clr-white);
 }
 tr {
   border-bottom: 0.5px solid #999;
@@ -112,6 +122,18 @@ tr {
   border: 0;
   float: left;
   font-weight: 500;
-  color: #37a6ff;
+  color: var(--clr-white);
   padding: 10px;
+}
+
+i {
+  color: var(--clr-white);
+}
+
+i:hover {
+  color: red;
+}
+
+a {
+  text-decoration: none;
 }

@@ -14,15 +14,16 @@ try {
 
     //je prépare ma requete
     $resto = $pdo->query('select * from produits where id_produits =' . $id)->fetch();
-    $resto = $pdo->prepare('delete from produits where id_produits= :id_produits');
+    $restoSupp = $pdo->prepare('delete from produits where id_produits= :id_produits');
   
+    unlink(__DIR__ . '/../../' . $resto['image']);
 
-    $resto->execute([
+    $restoSupp->execute([
         ':id_produits' => $id
     ]);
     
     header("Location:../../admin/ListeProduit.php");
    
 } catch (Exception $exception) {
-    echo 'erreur';
+    echo 'Erreur lors de la suppression';
 }

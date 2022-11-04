@@ -17,11 +17,7 @@ try{
 
     if ($id <= 0) {
        throw new Exception('Erreur lors de la récuperation de l\'produit (id)');
-   }
-    //j
- //récupération de l'id dans le lien
-//si un id a été envoyé alors :
-  
+   }  
 
     //verifier grace a l'id si le produit existe dans la base de  données
     $req = $pdo->prepare("SELECT * FROM produits WHERE id_produits = :id_produits");
@@ -29,7 +25,6 @@ try{
         ':id_produits' => $id
     ]);
     $produits = $req->fetch(PDO::FETCH_ASSOC) ?? null;
-    var_dump($produits);
 
     if(empty($produits)){
         //si ce produit n'existe pas
@@ -44,7 +39,7 @@ try{
         $_SESSION['panier'][$id]= 1 ;
     }
 //    //redirection vers la page index.php
-   header("Location:./../../index.php#commander");
+   header("Location:./../../index.php");
 
 
 

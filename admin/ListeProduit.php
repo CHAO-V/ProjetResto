@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="/assets/css/admin.css"> -->
+    <link rel="stylesheet" href="./css/admin.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,17 +18,23 @@
       crossorigin="anonymous"
     />
     <title>Liste des produits</title>
+    <style>
+      .imgObj{
+        object-fit: cover;
+      }
+    </style>
   </head>
       <body class='bg-secondary'>
         <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+        <div class="container-fluid">
           <a class='navbar-brand p-2' href='./ListeProduit.php'
-            ><img src='./images/logo.jpg' alt='' srcset='' width='150px'
+            ><img src='./images/logo.jpg' class="logo" alt='' srcset='' width='150px'
           /></a>
           <button
             class='navbar-toggler'
             type='button'
-            data-toggle='collapse'
-            data-target='#navbarNav'
+            data-bs-toggle='collapse'
+            data-bs-target='#navbarNav'
             aria-controls='navbarNav'
             aria-expanded='false'
             aria-label='Toggle navigation'
@@ -45,42 +51,55 @@
               <li class='nav-item active'>
                 <a class='nav-link' href='./ListeProduit.php'>Liste des produits</a>
               </li>
-              <li class='nav-item'>
-              <a class='nav-link' href='#'><?php
-              if (isset($_SESSION['admin']['user'])) echo "Bonjour: {$_SESSION['admin']['user']}";
-              ?></a>
-              </li>
-              <li class='nav-item'>
-                <a class='nav-link' href='./../assets/php/deconnexionAdmin.php'>Déconnexion</a>
-              </li>
+              <!-- <li class='nav-item'>
+              <a class='nav-link' href='./HistoriqueCommande.php'>Historique des commandes</a>
+            </li> -->
+              <?php
+              if(isset($_SESSION['admin']['user'])){
+                echo"
+                <div class='dropdown'>
+                    <button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' data-bs-toggle='dropdown'>
+                      Bonjour: {$_SESSION['admin']['user']}
+                    </button>
+                    <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                      <a class='dropdown-item' href='./../index.php'>Aller sur le site</a>
+                      <a class='dropdown-item' href='./../assets/php/deconnexionAdmin.php'>Déconnexion</a>
+                    </div>
+                  </div>";
+              }
+              ?>
             </ul>
           </div>
+        </div>
         </nav>
         <section class='container'>
           <h1 class='text-center mt-3'>Liste des produits</h1>
+          <div class='row gy'>
           <?php
           if (isset($_SESSION['admin']['user'])){
             foreach ($pdo->query('select * from produits')->fetchAll() as $data => $produits) {
               echo"
-                  <div class='text-center'>
-                  <div class='card w-100 mb-3 ' >
-                    <div class='card-body'>
-                      <h2 class='card-title text-center'>{$produits['nom_produit']}</h2>
-                      <img class='card-img-left' src='{$produits['image']}'>
+                <div class='card mb-3'>
+                  <div class='row'>
+                    <div class='col-md-8 col-lg-6 col-xl-5'>
+                      <img src='./../{$produits['image']}' class='img-responsive imgObj' alt='' width='460' height='345'>
+                    </div>
+                    <div class='col-md-4 col-lg-6 col-xl-7'>
+                      <h1 class='card-title'>{$produits['nom_produit']}</h1>
                       <p class='card-text'>Description: {$produits['description']}</p>
                       <p class='card-text'>Catégorie: {$produits['categorie']}</p>
                       <p class='card-text'>Prix: {$produits['prix']}€</p>
                       <form action='../assets/php/supprimer.php' method='post'>
-                      <input type='hidden' name='id' value='{$produits['id_produits']}'>
-                      <button type='submit'class='btn text-light bg-dark'>Supprimer</button>
-                    </form>
+                          <input type='hidden' name='id' value='{$produits['id_produits']}'>
+                          <button type='submit'class='btn text-light bg-dark mb-2'>Supprimer</button>
+                      </form>
                       <form action='../assets/php/modifier.php' method='post'>
-                      <input type='hidden' name='id' value='{$produits['id_produits']}'>
-                      <button type='submit'class='btn text-light bg-dark'>Modifier</button>
-                    </form>
+                          <input type='hidden' name='id' value='{$produits['id_produits']}'>
+                          <button type='submit'class='btn text-light bg-dark'>Modifier</button>
+                      </form>
                     </div>
                   </div>
-                  </div>";
+                </div>"; 
             }
           }else{
             echo"
@@ -90,6 +109,7 @@
             header( "refresh:3;url=connectAdmin.php" );
            }
               ?>
+          </div>
     </section>
 
     <script

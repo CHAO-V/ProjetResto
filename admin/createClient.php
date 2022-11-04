@@ -20,9 +20,16 @@
           $message ="Veuillez entrer votre prénom !";
         }
         if(isset($Email) && empty($Email)){
-
           $message ="Veuillez entrer votre email !";
+
         }
+
+        if (filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+          $message ="$Email valide";
+        } else {
+          $message ="$Email non valide";
+        }
+
         if(isset($number) && empty($number)){
 
           $message ="Veuillez entrer votre N° de téléphone !";
@@ -43,13 +50,13 @@
         }
 
         if(isset($Nom) && !empty($Nom) && isset($Prenom) && !empty($Prenom) && isset($Email) && !empty($Email) &&  isset($number) && !empty($number) &&  isset($clientPassword) && !empty($clientPassword)&& isset($clientRepassword) && !empty($clientRepassword)){
-                  $clienAccount = $pdo->prepare("INSERT INTO client VALUES (null,:nom,:prenom,:email,:telephone,:password");
-                  $res = $clienAccount->execute([
+                  $clientAccount = $pdo->prepare("INSERT INTO client VALUES (null,:nom,:prenom,:email,:telephone,:passwordClient)");
+                  $res = $clientAccount->execute([
                     ':nom' => $Nom,
                     ':prenom' => $Prenom,
                     ':email' => $Email,
                     ':telephone' => $number,
-                    ':password' => password_hash($clientPassword, PASSWORD_ARGON2I),
+                    ':passwordClient' => password_hash($clientPassword, PASSWORD_ARGON2I),
                   ]);
                   $message ="Inscription réussi ! Vous allez être rediriger sur la page de connexion";
                   header( "refresh:3;url=connectClient.php" );
@@ -73,9 +80,9 @@
     />
     <title>Inscription Client</title>
   </head>
-  <body>
+  <body class="bg-black">
     <div class="container">
-            <h1 class="text-center">Inscription Client</h1>
+            <h1 class="text-center text-light mb-3">Inscription Client</h1>
             <div class="alert alert-danger" role="alert">
                 <?php
                     if(isset($message)) echo $message ;
@@ -83,32 +90,32 @@
             </div>
             <form method="post">
                 <div class="form-group">
-                    <label for="Nom">Nom</label>
+                    <label for="Nom" class="text-light">Nom</label>
                     <input type="text" class="form-control" name="Nom"  placeholder="Entrer un nom utilisateur">
                 </div>
                 <div class="form-group">
-                    <label for="Prénom">Prénom</label>
+                    <label for="Prénom" class="text-light">Prénom</label>
                     <input type="text" class="form-control" name="Prenom"  placeholder="Entrer un nom utilisateur">
                 </div>
                 <div class="form-group mt-3">
-                    <label for="Email">Email</label>
+                    <label for="Email" class="text-light">Email</label>
                     <input type="email" class="form-control" name="Email" placeholder="Entrer un Email">
                 </div>
                 <div class="form-group mt-3">
-                    <label for="téléphone">N°de téléphone</label>
+                    <label for="téléphone" class="text-light">N°de téléphone</label>
                     <input type="text" class="form-control" name="number" placeholder="Entrer un N°de téléphone">
                 </div>
                 <div class="form-group mt-3">
-                    <label for="Mot de passe">Mot de passe</label>
+                    <label for="Mot de passe" class="text-light">Mot de passe</label>
                     <input type="password" class="form-control" name="clientPassword" placeholder="Entrer un Mot de passe">
                 </div>
                 <div class="form-group mt-3">
-                    <label for=" Confirmation Mot de passe">Confirmation du mot de passe</label>
+                    <label for=" Confirmation Mot de passe" class="text-light">Confirmation du mot de passe</label>
                     <input type="password" class="form-control" name="clientRepassword" placeholder="Confirmation du Mot de passe">
                 </div>
                 
-                <button type="submit" name="submit" class="btn btn-primary mt-3">S'inscrire</button> 
-                <a href="./connectClient.php" class="btn btn-primary mt-3">Retour</a>
+                <button type="submit" name="submit" class="btn text-light bg-dark mt-3">S'inscrire</button> 
+                <a href="./connectClient.php" class="btn text-light bg-dark mt-3">Retour</a>
 
             </form>
     </div>

@@ -16,8 +16,8 @@
 }
 
 body {
-  /* background-color: var(--clr-black); */
-  background-color: #333;
+  background-color: var(--clr-black);
+  /* background-color: #333; */
 }
 
 h1 {
@@ -171,6 +171,7 @@ textarea {
   border-radius: 0.5em;
   cursor: pointer;
   transition: var(--transition);
+  margin-bottom: 1rem;
 }
 
 .button:hover {

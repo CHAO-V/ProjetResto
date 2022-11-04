@@ -60,9 +60,9 @@
     />
     <title>Connexion Administrateur</title>
   </head>
-  <body>
+  <body class="bg-black">
   <div class="container">
-            <h1 class="text-center">Connexion Administrateur</h1>
+            <h1 class="text-center text-light mb-3">Connexion Administrateur</h1>
             <div class="alert alert-danger" role="alert">
                 <?php
                     if(isset($message)) echo $message ;
@@ -70,16 +70,16 @@
             </div>
             <form method="post">
                 <div class="form-group">
-                    <label for="Nom Utilisateur">Nom Utilisateur</label>
+                    <label for="Nom Utilisateur" class="text-light">Nom Utilisateur</label>
                     <input type="text" class="form-control" name="AdminUser"  placeholder="Entrer un nom utilisateur">
                 </div>
                 <div class="form-group mt-3">
-                    <label for="Mot de passe">Mot de passe</label>
+                    <label for="Mot de passe" class="text-light">Mot de passe</label>
                     <input type="password" class="form-control" name="AdminPassword" placeholder="Mot de passe">
                 </div>
                 
-                <button type="submit" name="submit" class="btn btn-primary mt-3">Connexion</button>
-                <a href="./createAdmin.php" class="btn btn-primary mt-3" role="button">Créer un compte</a>
+                <button type="submit" name="submit" class="btn text-light bg-dark mt-3">Connexion</button>
+                <a href="./createAdmin.php" class="btn text-light bg-dark mt-3" role="button">Créer un compte</a>
 
             </form>
     </div>

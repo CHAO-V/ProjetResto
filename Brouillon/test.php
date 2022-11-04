@@ -70,3 +70,73 @@
   </body>
 </html>
 
+
+
+<div class='text-center'>
+                  <div class='card w-100 mb-3 ' >
+                    <div class='card-body'>
+                      <h2 class='card-title text-center'>{$produits['nom_produit']}</h2>
+                      <img class='card-img-left' src='./../{$produits['image']}'>
+                      <p class='card-text'>Description: {$produits['description']}</p>
+                      <p class='card-text'>Catégorie: {$produits['categorie']}</p>
+                      <p class='card-text'>Prix: {$produits['prix']}€</p>
+                      <form action='../assets/php/supprimer.php' method='post'>
+                      <input type='hidden' name='id' value='{$produits['id_produits']}'>
+                      <button type='submit'class='btn text-light bg-dark'>Supprimer</button>
+                    </form>
+                      <form action='../assets/php/modifier.php' method='post'>
+                      <input type='hidden' name='id' value='{$produits['id_produits']}'>
+                      <button type='submit'class='btn text-light bg-dark'>Modifier</button>
+                    </form>
+                    </div>
+                  </div>
+
+
+
+
+<!-- vertical card -->
+                  <div class='col-sm-6 col-md-4 col-lg-3'>
+                    <div class='card'>
+                      <img src='./../{$produits['image']}' class='card-img-top image-fluid img-thumbnail' alt='...'>
+                      <div class='card-body'>
+                        <h5 class='card-title'>{$produits['nom_produit']}</h5>
+                        <p class='card-text'>Description: {$produits['description']}</p>
+                        <p class='card-text'>Catégorie: {$produits['categorie']}</p>
+                        <p class='card-text'>Prix: {$produits['prix']}€</p>
+                        <div class='text-center'>
+                          <form action='../assets/php/supprimer.php' method='post'>
+                            <input type='hidden' name='id' value='{$produits['id_produits']}'>
+                            <button type='submit'class='btn text-light bg-dark mb-2'>Supprimer</button>
+                          </form>
+                          <form action='../assets/php/modifier.php' method='post'>
+                            <input type='hidden' name='id' value='{$produits['id_produits']}'>
+                            <button type='submit'class='btn text-light bg-dark'>Modifier</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>";
+
+
+
+                  <?php
+          if (isset($_SESSION['admin']['user'])){
+            foreach ($pdo->query('select panier from commandes')->fetchAll() as $data => $commandes) {
+              echo"
+                  <div class='text-center'>
+                  <div class='card w-100 mb-3 ' >
+                    <div class='card-body'>
+                      <h2 class='card-title text-center'>{$commandes['panier']}</h2>
+                      <h2 class='card-title text-center'>{$commandes['id_client']}</h2>
+                    </div>
+                  </div>
+                  </div>";
+            }
+          }else{
+            echo"
+            <div class='alert alert-danger' role='alert'>
+              Vous n'êtes pas connecté ! Vous allez être rediriger sur la page de connexion Admin
+            </div>";
+            header( "refresh:3;url=connectAdmin.php" );
+           }
+              ?>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/contact.css" />
+    <link rel="stylesheet" href="./assets/css/reviewsCard.css" />
     <link rel="stylesheet" href="./assets/css/footer.css" />
     <link rel="stylesheet" href="./assets/css/MediaQueries.css" />
 
@@ -15,7 +16,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Contact</title>
+    <title>Avis Client</title>
   </head>
   <body>
     <header>
@@ -37,68 +38,76 @@
             <a href="./index.php#menu">Menu</a>
           </li>
           <li class="nav-links">
-            <a href="./avis.php">Avis</a>
+            <a href="./contact.php">Contact</a>
           </li>
         </ul>
       </nav>
     </header>
     <section>
-      <h1>Formulaire de contact</h1>
+      <h1>Avis Client</h1>
       <div class="container">
-        <form
-          action="./assets/php/SendMailAndCaptcha.php"
-          method="post"
-          id="ContactForm"
-        >
+        <form action="">
           <fieldset>
-            <legend>Mes coordonnées</legend>
+            <legend>Avis</legend>
             <div class="field">
               <label for="Nom">Nom</label>
-              <div class="value"><input type="text" id="Nom" name="Nom" /></div>
+              <div class="value"><input type="text" id="Nom"  /></div>
             </div>
             <div class="field">
-              <label for="Prénom">Prénom</label>
+              <label for="object">Sujet</label>
               <div class="value">
-                <input type="text" id="Prenom" name="Prenom" />
-              </div>
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <div class="value">
-                <input type="email" id="email" name="email" />
-              </div>
-            </div>
-            <div class="field">
-              <label for="phone">N°de téléphone</label>
-              <div class="value">
-                <input type="text" id="phone" name="phone" />
-              </div>
-            </div>
-          </fieldset>
-          <fieldset>
-            <legend>Ma demande</legend>
-            <div class="field">
-              <label for="object">Objet de la demande</label>
-              <div class="value">
-                <input type="text" id="object" name="object" />
+                <input type="text" id="object" />
               </div>
             </div>
             <textarea
-              name="txtArea"
               id="txtArea"
               placeholder="Votre message..."
             ></textarea>
           </fieldset>
           <div id="errorA"></div>
           <div class="BtnContainer">
-            <button type="submit" class="button" id="button">Envoyer</button>
+            <button type="submit" class="button" id="button">Poster</button>
           </div>
           <input
             type="hidden"
             id="recaptchaResponse"
             name="recaptcha-response"
           />
-        </form>
+          </form>
+          <div id="result"></div>
+          <div class="reviewsCard">
+            <div class="reviewsImg"><img src="./assets/avatar/avatar1.png" class="img" alt="" srcset=""></div>
+            <div class='reviewsTxt'>
+            <h4>Nom 1</h4>
+            <p>Excellent restaurant! Quelle surprise, c’est ma fille qui nous a fait découvrir ce tout nouveau restaurant et comptez sur nous pour revenir 👍😋, la décoration est top ainsi que le service, sans parler de la cuisine de qualité !</p>
+            <p>Avis posté le 10/09/2022</p>
+          </div>
+          </div>
+          <div class="reviewsCard">
+            <div class="reviewsImg"><img src="./assets/avatar/avatar2.png" class="img" alt="" srcset=""></div>
+            <div class='reviewsTxt'>
+            <h4>Nom 2</h4>
+            <p>Super restaurant, je suis venu avec mes 3 enfants et ma femme, rapport qualité prix est au top !! Le bœuf tigre est magnifiquement bon !!</p>
+            <p>Avis posté le 01/01/2021</p>
+          </div>
+          </div>
+          <div class="reviewsCard">
+            <div class="reviewsImg"><img src="./assets/avatar/avatar3.png" class="img" alt="" srcset=""></div>
+            <div class='reviewsTxt'>
+            <h4>Nom 3</h4>
+            <p>Cuisine de qualité avec de très bons produits frais, je retrouve  la cuisine de mon pays ! Je me suis régalé et le personnels sont très aimable et fort sympathique. Le cadre est magnifique et l'ambiance au rendez-vous !
+            Je reviendrai à coup sûr avec Madame !</p>
+            <p>Avis posté le 01/03/2020</p>
+          </div>
+          </div>
+          <div class="reviewsCard">
+            <div class="reviewsImg"><img src="./assets/avatar/avatar4.png" class="img" alt="" srcset=""></div>
+            <div class='reviewsTxt'>
+            <h4>Nom 4</h4>
+            <p>Super bon ! Endroit agréable et convivial ! Je recommande au max</p>
+            <p>Avis posté le 20/12/2020</p>
+          </div>
+          </div>
       </div>
     </section>
     <footer>
@@ -146,9 +155,9 @@
         </div>
       </div>
     </footer>
-    <script src="./assets/js/contactCheck.js"></script>
+    <script src="./assets/js/reviews.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6Ld1oKIgAAAAAIAy1Y7C3YvcZXAD8lxZ-dJaMyPn"></script>
-  <script>
+   <script>
     grecaptcha.ready(function() {
       grecaptcha.execute('6Ld1oKIgAAAAAIAy1Y7C3YvcZXAD8lxZ-dJaMyPn', {
         action: 'homepage'
