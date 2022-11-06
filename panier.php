@@ -20,7 +20,7 @@
 <body>
     <h1>Panier</h1>
     <div class="container">
-        <form action='./assets/php/confirmationPanier.php' method='post'>
+        <form action='./assets/php/confirmationPanierV2.php' method='post'>
             <fieldset>
                 <legend>Mes coordonnées</legend>
                 <div class='field'>
@@ -87,7 +87,7 @@
             </fieldset>
                 <div class='btn-container'>
                     <button class='btn' type='submit'>Commander</button>
-                    <button class='btn'><a href="./index.php#menu">Retour</a></button>
+                    <a href="./index.php#menu" class='btn'>Retour</a>
                 </div>
         </form>
     </div>

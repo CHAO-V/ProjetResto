@@ -364,25 +364,17 @@ span {
   transition: var(--transition);
   text-decoration: none;
   border: 2px solid var(--clr-white);
+  font-family: sans-serif;
 }
 .btn:hover {
   background: var(--clr-white);
   color: var(--clr-black);
 }
 
-/* .btn-container {
-  text-align: center;
-} */
-
 .btnContainer {
   text-align: center;
   margin-top: 2rem;
 }
-
-/* .recapFood {
-  display: flex;
-  justify-content: space-between;
-} */
 
 .reviewsSection {
   background: var(--clr-black);

@@ -66,7 +66,7 @@ function CreateReviews() {
   divTxt.appendChild(Pobject);
   divTxt.appendChild(PtxtArea);
   divTxt.appendChild(time);
-  errorA.style.color='green';
+  errorA.style.color = "green";
   errorA.innerHTML = "Merci pour votre avis !";
 }
 
@@ -77,6 +77,7 @@ function DateReviews() {
 
 function Validate() {
   if (Nom.value == "") {
+    errorA.style.color = "red";
     errorA.innerHTML = "Entrez votre Nom";
     Nom.focus();
     button.removeEventListener("click");
@@ -84,12 +85,14 @@ function Validate() {
   }
 
   if (object.value == "") {
+    errorA.style.color = "red";
     errorA.innerHTML = "Entrez le sujet";
     object.focus();
     button.removeEventListener("click");
     return false;
   }
   if (txtArea.value == "") {
+    errorA.style.color = "red";
     errorA.innerHTML = "Entrez votre Avis";
     txtArea.focus();
     button.removeEventListener("click");
