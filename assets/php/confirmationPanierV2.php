@@ -7,14 +7,14 @@ $products = $pdo->query("SELECT * FROM produits WHERE id_produits IN (".implode(
 
 foreach($products as $produit):
     $nomProduit=$produit['nom_produit'];
-endforeach;
 var_dump($nomProduit);
 
-$id_commandes="";
+// $id_commandes="";
 $panier = $pdo->prepare("INSERT INTO commandes VALUES (null,:panier,null,:id_client)");
   $panier->execute([
         ':panier' => $nomProduit
       ]);
 
-    
+    endforeach;
+
 ?>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/images/logo.jpg">
     <link rel="stylesheet" href="./assets/css/contact.css" />
     <link rel="stylesheet" href="./assets/css/reviewsCard.css" />
     <link rel="stylesheet" href="./assets/css/footer.css" />
@@ -61,7 +62,7 @@
             </div>
             <textarea
               id="txtArea"
-              placeholder="Votre message..."
+              placeholder="Votre avis..."
             ></textarea>
           </fieldset>
           <div id="errorA"></div>

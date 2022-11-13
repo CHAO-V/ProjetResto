@@ -12,6 +12,8 @@ button.addEventListener("click", function (e) {
   e.preventDefault();
   ValidateContact();
   document.querySelector("#ContactForm").submit();
+  errorA.style.color = "green";
+  errorA.innerHTML = "Votre message a bien été envoyé !";
 });
 
 function ValidateContact() {
@@ -34,33 +36,23 @@ function ValidateContact() {
     email.focus();
     button.removeEventListener("click");
     return false;
-  } else {
-    errorA.innerHTML = "OK";
   }
   if (phone.value == "") {
     errorA.innerHTML = "Entrez votre mail";
     phone.focus();
     button.removeEventListener("click");
     return false;
-  } else {
-    errorA.innerHTML = "OK";
   }
   if (object.value == "") {
     errorA.innerHTML = "Entrez l'objet de votre demande";
     object.focus();
     button.removeEventListener("click");
     return false;
-  } else {
-    errorA.innerHTML = "OK";
   }
   if (txtArea.value == "") {
     errorA.innerHTML = "Entrez votre message";
     txtArea.focus();
     button.removeEventListener("click");
     return false;
-  } else {
-    errorA.innerHTML = "OK";
   }
-
-  console.log(Nom.value);
 }

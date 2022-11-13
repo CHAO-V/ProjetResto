@@ -1,4 +1,3 @@
-
 <?php
 ini_set('display_errors', 'on');
 error_reporting(E_ALL);
@@ -39,8 +38,8 @@ catch (Exception $e)
                 <div class="d-flex align-items-center justify-content-center vh-100">
                     <div class="text-center">
                         <h1 class="display-1 fw-bold"></h1>
-                        <p class="fs-3"> <span class="text-white">Opps!</span> Une Erreur est survenue sur le site.</p>
-                        <p class="fs-3">Veuillez réessayer ultérieurement.</p>
+                        <p class="fs-3 text-light"> <span class="text-danger">Oupps!</span> Une Erreur est survenue sur le site.</p>
+                        <p class="fs-3 text-light ">Veuillez réessayer ultérieurement.</p>
                         <a href="https://www.instagram.com/goku.asianfood59/" target="_blank"><i class="fa-2x bi bi-instagram"></i></a>
                         <a href="https://www.snapchat.com/add/gokuasianfood" target="_blank"><i class="fa-2x bi bi-snapchat"></i></a>
                         <a href="https://www.facebook.com/people/Goku-Asian-Food/100039470687209/" target="_blank"><i class="fa-2x bi bi-facebook"></i></a>

@@ -11,6 +11,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/images/logo.jpg">
     <link rel="stylesheet" href="./css/admin.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -24,7 +25,7 @@
       <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
       <div class="container-fluid">
         <a class='navbar-brand p-2' href='./AjouterProduit.php'
-          ><img src='./images/logo.jpg' class=' logo' alt='' srcset='' width='150px'
+          ><img src='./images/logo.jpg' class='logo' alt='' srcset='' width='150px'
         /></a>
         <button
           class='navbar-toggler'

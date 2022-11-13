@@ -12,8 +12,8 @@
     <body class="bg-black">
         <div class="d-flex align-items-center justify-content-center vh-100">
             <div class="text-center">
-                <h1 class="display-1 fw-bold">404</h1>
-                <p class="fs-3"> <span class="text-white">Opps!</span> Page Introuvable.</p>
+                <h1 class="display-1 fw-bold text-light  ">404</h1>
+                <p class="fs-3 text-light "> <span class="text-danger ">Oupps!</span> Page Introuvable.</p>
                 <a href="./index.php" class="btn btn-dark">Retour</a>
             </div>
         </div>

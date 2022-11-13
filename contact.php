@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/images/logo.jpg">
     <link rel="stylesheet" href="./assets/css/contact.css" />
     <link rel="stylesheet" href="./assets/css/footer.css" />
     <link rel="stylesheet" href="./assets/css/MediaQueries.css" />
@@ -46,7 +47,7 @@
       <h1>Formulaire de contact</h1>
       <div class="container">
         <form
-          action="./assets/php/SendMailAndCaptcha.php"
+          action="./assets/php/SendMail.php"
           method="post"
           id="ContactForm"
         >

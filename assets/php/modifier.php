@@ -12,9 +12,6 @@
 <body class="bg-black">
 <main class="container ">
     <h1 class="text-center text-light">Modifier un produit</h1>
-    <div class='alert alert-danger' role='alert'>
-          <?$message?>
-    </div>
     <?php
 
     try {
@@ -80,7 +77,7 @@
     
             // Check if file already exists
             if (file_exists($target_file)) {
-              $message= "désolé, ce fichier existe deja sur le serveur.";
+              echo "Désolé, ce fichier existe deja sur le serveur.";
               $uploadOk = false;
             }
       
@@ -101,7 +98,7 @@
       
             // Check if $uploadOk is set to 0 by an error
             if (!$uploadOk) {
-              $message = "Le fichier ne respecte les conditions d'upload";
+              echo  "Le fichier ne respecte pas les conditions d'upload";
               // if everything is ok, try to upload file
             } else {
       
