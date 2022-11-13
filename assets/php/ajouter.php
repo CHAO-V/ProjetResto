@@ -83,12 +83,8 @@ if(isset($_POST['AddProduct'])){
     
             //je déplace mon fichier du dossier temporaire vers son dossier définitif
             if (move_uploaded_file($fileToUpload["tmp_name"], $target_file)) {
-            // if (move_uploaded_file($fileToUpload["tmp_name"], $imgPath)) {
-              //succès
-              // echo "The file " . htmlspecialchars(basename($fileToUpload["name"])) . " has been uploaded.";
-              // echo '<a href="../../index.php">Lien de retour</a>';
+              echo "Le fichier a bien été déplacé";
             } else {
-              //erreur
               echo "Erreur : le déplacement du fichier est impossible";
             }
           }

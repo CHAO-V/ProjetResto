@@ -31,8 +31,6 @@ if (isset($_POST['submit'])) {
       if (password_verify($ClientPassword, $Email['passwordClient'])) {
         session_start();
         $_SESSION['client'] = $Email;
-        // var_dump($_SESSION);
-
         header('location: ./../index.php');
         // $message ="OK";
         //  throw new Exception('OK');
